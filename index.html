@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Prosperar com Propósito - Os 7 Princípios Bíblicos da Verdadeira Riqueza</title>
+	<meta name="description"
+		content="Descubra os 7 princípios bíblicos para construir riqueza verdadeira com propósito e significado">
+
+	<!-- Bootstrap CSS -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+	<!-- Font Awesome Icons -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+	<!-- Google Fonts -->
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+		rel="stylesheet">
+
+	<style>
+		:root {
+			--primary-color: #eab308;
+			--primary-dark: #ca8a04;
+			--secondary-color: #3b82f6;
+			--success-color: #10b981;
+			--text-dark: #1f2937;
+			--text-muted: #6b7280;
+			--bg-light: #f8fafc;
+		}
+
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+
+		body {
+			font-family: 'Inter', sans-serif;
+			line-height: 1.6;
+			color: var(--text-dark);
+		}
+
+		.gradient-bg {
+			background: linear-gradient(135deg, #f8fafc 0%, #ffffff 50%, #fef3c7 100%);
+		}
+
+		.gradient-text {
+			background: linear-gradient(135deg, #1f2937 0%, #1e40af 50%, #eab308 100%);
+			-webkit-background-clip: text;
+			-webkit-text-fill-color: transparent;
+			background-clip: text;
+		}
+
+		.hero-section {
+			padding: 80px 0;
+			position: relative;
+			overflow: hidden;
+		}
+
+		.hero-section::before {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			background: linear-gradient(45deg, rgba(234, 179, 8, 0.1) 0%, transparent 50%, rgba(59, 130, 246, 0.1) 100%);
+			z-index: 1;
+		}
+
+		.hero-content {
+			position: relative;
+			z-index: 2;
+		}
+
+		.badge-custom {
+			background: #fef3c7;
+			color: #92400e;
+			padding: 8px 16px;
+			border-radius: 50px;
+			font-size: 14px;
+			font-weight: 500;
+			display: inline-flex;
+			align-items: center;
+			gap: 8px;
+			margin-bottom: 24px;
+		}
+
+		.btn-primary-custom {
+			background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+			border: none;
+			padding: 16px 32px;
+			font-size: 18px;
+			font-weight: 600;
+			border-radius: 12px;
+			transition: all 0.3s ease;
+			box-shadow: 0 10px 25px rgba(234, 179, 8, 0.3);
+		}
+
+		.btn-primary-custom:hover {
+			transform: translateY(-2px);
+			box-shadow: 0 15px 35px rgba(234, 179, 8, 0.4);
+			background: linear-gradient(135deg, var(--primary-dark) 0%, #a16207 100%);
+		}
+
+		.btn-success-custom {
+			background: linear-gradient(135deg, var(--success-color) 0%, #059669 100%);
+			border: none;
+			padding: 20px 48px;
+			font-size: 20px;
+			font-weight: 700;
+			border-radius: 12px;
+			transition: all 0.3s ease;
+			box-shadow: 0 10px 25px rgba(16, 185, 129, 0.3);
+		}
+
+		.btn-success-custom:hover {
+			transform: translateY(-2px);
+			box-shadow: 0 15px 35px rgba(16, 185, 129, 0.4);
+			background: linear-gradient(135deg, #059669 0%, #047857 100%);
+		}
+
+		.principle-card {
+			background: white;
+			border-radius: 20px;
+			padding: 32px;
+			box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+			transition: all 0.3s ease;
+			height: 100%;
+			border: none;
+		}
+
+		.principle-card:hover {
+			transform: translateY(-8px);
+			box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+		}
+
+		.principle-icon {
+			width: 64px;
+			height: 64px;
+			border-radius: 50%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			margin: 0 auto 24px;
+			font-size: 24px;
+			transition: all 0.3s ease;
+		}
+
+		.principle-card:hover .principle-icon {
+			background-color: #f3f4f6 !important;
+			transform: scale(1.1);
+		}
+
+		.testimonial-card {
+			background: white;
+			border-radius: 20px;
+			padding: 32px;
+			box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+			height: 100%;
+		}
+
+		.stars {
+			color: var(--primary-color);
+			margin-bottom: 20px;
+		}
+
+		.offer-section {
+			background: linear-gradient(135deg, var(--primary-color) 0%, #f59e0b 100%);
+			padding: 80px 0;
+			position: relative;
+		}
+
+		.offer-card {
+			background: white;
+			border-radius: 24px;
+			padding: 48px;
+			box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+			margin: 0 auto;
+			max-width: 600px;
+		}
+
+		.price-section {
+			background: #f0fdf4;
+			border-radius: 16px;
+			padding: 24px;
+			margin: 24px 0;
+			text-align: center;
+		}
+
+		.current-price {
+			font-size: 48px;
+			font-weight: 800;
+			color: var(--success-color);
+		}
+
+		.old-price {
+			font-size: 24px;
+			color: var(--text-muted);
+			text-decoration: line-through;
+		}
+
+		.guarantee-badge {
+			background: #fef2f2;
+			color: #dc2626;
+			padding: 8px 16px;
+			border-radius: 50px;
+			font-size: 14px;
+			font-weight: 600;
+			display: inline-flex;
+			align-items: center;
+			gap: 8px;
+			animation: pulse 2s infinite;
+		}
+
+		@keyframes pulse {
+
+			0%,
+			100% {
+				opacity: 1;
+			}
+
+			50% {
+				opacity: 0.7;
+			}
+		}
+
+		.footer-section {
+			background: #111827;
+			color: white;
+			padding: 48px 0;
+		}
+
+		.section-padding {
+			padding: 80px 0;
+		}
+
+		@media (max-width: 768px) {
+			.hero-section {
+				padding: 60px 0;
+			}
+
+			.section-padding {
+				padding: 60px 0;
+			}
+
+			.principle-card {
+				padding: 24px;
+				margin-bottom: 24px;
+			}
+
+			.offer-card {
+				padding: 32px 24px;
+			}
+
+			.current-price {
+				font-size: 36px;
+			}
+
+			.btn-success-custom {
+				padding: 16px 32px;
+				font-size: 18px;
+			}
+		}
+	</style>
+</head>
+
+<body>
+	<section class="hero-section gradient-bg">
+		<div class="container">
+			<div class="hero-content text-center">
+				<div class="badge-custom">
+					<i class="fas fa-book"></i>
+					Ebook Exclusivo
+				</div>
+
+				<h1 class="display-1 fw-bold mb-4 gradient-text">
+					Prosperar com
+					<span class="d-block">Propósito</span>
+				</h1>
+
+				<p class="lead fs-2 text-muted mb-3 fw-medium">
+					Os 7 Princípios Bíblicos da Verdadeira Riqueza
+				</p>
+
+				<p class="fs-5 text-muted mb-5 mx-auto" style="max-width: 600px;">
+					Descubra como construir riqueza verdadeira seguindo princípios bíblicos atemporais.
+					Transforme sua vida financeira com sabedoria divina.
+				</p>
+
+				<div class="d-flex flex-column align-items-center gap-3">
+					<button class="btn btn-primary-custom btn-lg" onclick="scrollToOffer()">
+						Quero Transformar Minha Vida Financeira
+					</button>
+					<div class="d-flex align-items-center text-muted small">
+						<i class="fas fa-star text-warning me-2"></i>
+						<span>Mais de 5.000 vidas transformadas</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="section-padding bg-white">
+		<div class="container">
+			<div class="text-center mb-5">
+				<h2 class="display-4 fw-bold mb-4">
+					Por que Este Ebook Pode Transformar Sua Vida?
+				</h2>
+				<p class="lead text-muted mx-auto" style="max-width: 700px;">
+					Combine sabedoria bíblica milenar com estratégias práticas para construir
+					uma vida próspera e com propósito
+				</p>
+			</div>
+
+			<div class="row align-items-center">
+				<div class="col-lg-6 order-2 order-lg-1">
+					<div class="benefits-list">
+						<div class="d-flex align-items-start mb-4">
+							<i class="fas fa-check-circle text-success fs-4 me-3 mt-1"></i>
+							<span class="fs-5">Transforme sua relação com o dinheiro</span>
+						</div>
+						<div class="d-flex align-items-start mb-4">
+							<i class="fas fa-check-circle text-success fs-4 me-3 mt-1"></i>
+							<span class="fs-5">Descubra princípios bíblicos atemporais</span>
+						</div>
+						<div class="d-flex align-items-start mb-4">
+							<i class="fas fa-check-circle text-success fs-4 me-3 mt-1"></i>
+							<span class="fs-5">Construa riqueza com propósito e significado</span>
+						</div>
+						<div class="d-flex align-items-start mb-4">
+							<i class="fas fa-check-circle text-success fs-4 me-3 mt-1"></i>
+							<span class="fs-5">Desenvolva uma mentalidade de abundância</span>
+						</div>
+						<div class="d-flex align-items-start mb-4">
+							<i class="fas fa-check-circle text-success fs-4 me-3 mt-1"></i>
+							<span class="fs-5">Aprenda a administrar recursos com sabedoria</span>
+						</div>
+						<div class="d-flex align-items-start mb-4">
+							<i class="fas fa-check-circle text-success fs-4 me-3 mt-1"></i>
+							<span class="fs-5">Encontre equilíbrio entre prosperidade e espiritualidade</span>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-lg-6 order-1 order-lg-2 mb-5 mb-lg-0">
+					<div class="position-relative">
+						<div class="bg-gradient p-5 rounded-4 shadow-lg"
+							style="background: linear-gradient(135deg, #fef3c7 0%, #dbeafe 100%);">
+							<div class="bg-white rounded-3 p-5 shadow text-center">
+								<i class="fas fa-book text-warning display-4 mb-3"></i>
+								<h3 class="h2 fw-bold mb-3">Conteúdo Exclusivo</h3>
+								<p class="text-muted">
+									Mais de 30 páginas de conteúdo prático baseado em anos de estudo
+									e aplicação de princípios bíblicos para prosperidade
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="section-padding" style="background: linear-gradient(135deg, #f8fafc 0%, #dbeafe 100%);">
+		<div class="container">
+			<div class="text-center mb-5">
+				<h2 class="display-4 fw-bold mb-4">
+					Os 7 Princípios da Verdadeira Riqueza
+				</h2>
+				<p class="lead text-muted mx-auto" style="max-width: 700px;">
+					Cada princípio é uma chave que abre portas para a prosperidade integral
+				</p>
+			</div>
+
+			<div class="row g-4">
+				<div class="col-lg-4 col-md-6">
+					<div class="principle-card text-center">
+						<div class="principle-icon" style="background-color: #fef3c7; color: #92400e;">
+							<i class="fas fa-crown"></i>
+						</div>
+						<h3 class="h4 fw-bold mb-3">O Fundamento Inabalável</h3>
+						<p class="text-warning fw-semibold mb-3">Buscar o Reino de Deus em Primeiro Lugar</p>
+						<p class="text-muted">Estabeleça prioridades corretas e construa sobre bases sólidas</p>
+					</div>
+				</div>
+
+				<div class="col-lg-4 col-md-6">
+					<div class="principle-card text-center">
+						<div class="principle-icon" style="background-color: #dcfce7; color: #166534;">
+							<i class="fas fa-solid fa-arrow-trend-up"></i>
+						</div>
+						<h3 class="h4 fw-bold mb-3">A Ferramenta Essencial</h3>
+						<p class="text-success fw-semibold mb-3">Trabalho Diligente e com Excelência</p>
+						<p class="text-muted">Desenvolva uma mentalidade de excelência em tudo que fizer</p>
+					</div>
+				</div>
+
+				<div class="col-lg-4 col-md-6">
+					<div class="principle-card text-center">
+						<div class="principle-icon" style="background-color: #dbeafe; color: #1e40af;">
+							<i class="fas fa-shield-alt"></i>
+						</div>
+						<h3 class="h4 fw-bold mb-3">A Gestão Consciente</h3>
+						<p class="text-primary fw-semibold mb-3">Administração Sábia dos Recursos</p>
+						<p class="text-muted">Aprenda a gerir seus recursos com sabedoria e responsabilidade</p>
+					</div>
+				</div>
+
+				<div class="col-lg-4 col-md-6">
+					<div class="principle-card text-center">
+						<div class="principle-icon" style="background-color: #fce7f3; color: #be185d;">
+							<i class="fas fa-heart"></i>
+						</div>
+						<h3 class="h4 fw-bold mb-3">O Fluxo da Bênção</h3>
+						<p class="fw-semibold mb-3" style="color: #be185d;">Generosidade e Compartilhamento</p>
+						<p class="text-muted">Descubra como a generosidade multiplica suas bênçãos</p>
+					</div>
+				</div>
+
+				<div class="col-lg-4 col-md-6">
+					<div class="principle-card text-center">
+						<div class="principle-icon" style="background-color: #f3e8ff; color: #7c3aed;">
+							<i class="fas fa-star"></i>
+						</div>
+						<h3 class="h4 fw-bold mb-3">A Atitude Correta</h3>
+						<p class="fw-semibold mb-3" style="color: #7c3aed;">Contentamento e Gratidão</p>
+						<p class="text-muted">Cultive uma mentalidade de abundância e gratidão</p>
+					</div>
+				</div>
+
+				<div class="col-lg-4 col-md-6">
+					<div class="principle-card text-center">
+						<div class="principle-icon" style="background-color: #f0fdfa; color: #0d9488;">
+							<i class="fas fa-check-circle"></i>
+						</div>
+						<h3 class="h4 fw-bold mb-3">O Caminho Íntegro</h3>
+						<p class="fw-semibold mb-3" style="color: #0d9488;">Honestidade e Retidão</p>
+						<p class="text-muted">Construa riqueza sobre fundamentos éticos e morais</p>
+					</div>
+				</div>
+
+				<div class="col-lg-4 col-md-6 mx-auto">
+					<div class="principle-card text-center">
+						<div class="principle-icon" style="background-color: #eef2ff; color: #4338ca;">
+							<i class="fas fa-users"></i>
+						</div>
+						<h3 class="h4 fw-bold mb-3">A Confiança Plena</h3>
+						<p class="fw-semibold mb-3" style="color: #4338ca;">Fé na Provisão Divina</p>
+						<p class="text-muted">Desenvolva uma fé inabalável na provisão de Deus</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="section-padding bg-white">
+		<div class="container">
+			<div class="text-center mb-5">
+				<h2 class="display-4 fw-bold mb-4">
+					O Que Dizem Nossos Leitores
+				</h2>
+			</div>
+
+			<div class="row g-4">
+				<div class="col-lg-6">
+					<div class="testimonial-card"
+						style="background: linear-gradient(135deg, #fef3c7 0%, #fed7aa 100%);">
+						<div class="stars text-center mb-4">
+							<i class="fas fa-star"></i>
+							<i class="fas fa-star"></i>
+							<i class="fas fa-star"></i>
+							<i class="fas fa-star"></i>
+							<i class="fas fa-star"></i>
+						</div>
+						<p class="fst-italic mb-4 fs-5">
+							"Este ebook mudou completamente minha perspectiva sobre dinheiro e prosperidade.
+							Agora entendo que é possível ser próspero seguindo princípios bíblicos."
+						</p>
+						<div class="text-center">
+							<div class="fw-bold">Maria Silva</div>
+							<div class="text-muted small">Empresária</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-lg-6">
+					<div class="testimonial-card"
+						style="background: linear-gradient(135deg, #dbeafe 0%, #c7d2fe 100%);">
+						<div class="stars text-center mb-4">
+							<i class="fas fa-star"></i>
+							<i class="fas fa-star"></i>
+							<i class="fas fa-star"></i>
+							<i class="fas fa-star"></i>
+							<i class="fas fa-star"></i>
+						</div>
+						<p class="fst-italic mb-4 fs-5">
+							"Os 7 princípios são práticos e transformadores. Minha vida financeira
+							nunca mais foi a mesma depois de aplicar esses ensinamentos."
+						</p>
+						<div class="text-center">
+							<div class="fw-bold">João Santos</div>
+							<div class="text-muted small">Pastor e Consultor</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section id="offer" class="offer-section">
+		<div class="container">
+			<div class="offer-card">
+				<div class="text-center">
+					<div class="guarantee-badge mb-4">
+						<span class="me-2">●</span>
+						Oferta Limitada
+					</div>
+
+					<h2 class="display-4 fw-bold mb-4">
+						Transforme Sua Vida Financeira Hoje
+					</h2>
+
+					<p class="lead mb-4">
+						Tenha acesso imediato aos 7 Princípios Bíblicos da Verdadeira Riqueza
+					</p>
+
+					<div class="price-section">
+						<div class="current-price mb-2">R$ 12,90</div>
+						<div class="old-price">De R$ 29,90</div>
+					</div>
+
+					<div class="mb-4">
+						<div class="d-flex align-items-center justify-content-center mb-3">
+							<i class="fas fa-check-circle text-success me-2"></i>
+							<span>Acesso imediato após o pagamento</span>
+						</div>
+						<div class="d-flex align-items-center justify-content-center mb-4">
+							<i class="fas fa-check-circle text-success me-2"></i>
+							<span>Garantia de 7 dias ou seu dinheiro de volta</span>
+						</div>
+					</div>
+
+					<a href="https://pay.hotmart.com/H100078646E" class="btn btn-success-custom text-decoration-none">
+						Quero Meu Ebook Agora
+					</a>
+
+					<p class="text-muted small mt-3">
+						Pagamento 100% seguro • Acesso imediato
+					</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<footer class="footer-section">
+		<div class="container text-center">
+			<h3 class="h2 fw-bold mb-3">Prosperar com Propósito</h3>
+			<p class="text-light mb-4">
+				Transformando vidas através de princípios bíblicos de prosperidade
+			</p>
+			<div class="text-light small">
+				<span>© 2024 Todos os direitos reservados</span>
+			</div>
+		</div>
+	</footer>
+
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+	<script>
+		function scrollToOffer() {
+			document.getElementById('offer').scrollIntoView({
+				behavior: 'smooth'
+			});
+		}
+	</script>
+</body>
+
+</html>
